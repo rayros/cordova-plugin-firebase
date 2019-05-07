@@ -111,6 +111,12 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
         }
     }
 
+    @Override
+    public void onNewToken(String s) {
+        super.onNewToken(s);
+        Log.d("NEW_TOKEN",s);
+    }
+
     private void sendNotification(String id, String title, String messageBody, Map<String, String> data, boolean showNotification, String sound, String lights) {
         Bundle bundle = new Bundle();
         for (String key : data.keySet()) {
